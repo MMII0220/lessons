@@ -11,7 +11,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/posts', [PostController::class, 'index']);
+Route::get('/posts', [PostController::class, 'index'])->name('post.index');
 
 Route::get('/posts/create', [PostController::class, 'create']);
 
@@ -22,7 +22,6 @@ Route::get('posts/delete', [PostController::class, 'delete']);
 Route::get('/posts/firstOrCreate', [PostController::class, 'firstOrCreate']);
 Route::get('/posts/updateOrCreate', [PostController::class, 'updateOrCreate']);
 
-Route::get('/about', [AboutController::class, 'index']);
-// Route::get('/about', [AboutController::class, 'index']);
-Route::get('/contacts', [ContactController::class, 'index']);
-Route::get('/main', [MainController::class, 'index']);
+Route::get('/about', [AboutController::class, 'index'])->name('about.index');
+Route::get('/contacts', [ContactController::class, 'index'])->name('contact.index');
+Route::get('/main', [MainController::class, 'index'])->name('main.index');
